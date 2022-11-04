@@ -17,6 +17,8 @@ def load_qa_pipeline() -> Pipeline:
 def load_wiki_summary(query: str) -> str:
     results = wikipedia.search(query)
     summary = wikipedia.summary(results[0], sentences=10)
+    # print(summary)
+    print(True if "A vrddhi-derived form of Sanskrit mitra gives Maitreya, the name of a bodhisattva in Buddhist tradition." in summary else False)
     return summary
 
 def answer_question(pipeline: Pipeline, question: str, paragraph: str) -> dict:
